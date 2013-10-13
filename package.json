@@ -1,0 +1,12 @@
+{
+  "name": "grandslam",
+  "description": "express app for talking to an hdhomerun",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "hdhomerun": "0.0.3",
+    "lodash": "~2.2.1",
+    "jade-amd": "~0.2.0"
+  }
+}

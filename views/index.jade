@@ -1,0 +1,27 @@
+!!!
+head
+  meta(charset="8tf8")
+  meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+  link(href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css', rel='stylesheet')
+  link(href='//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css', rel='stylesheet')
+  script(src='bower_components/requirejs/require.js', data-main='javascript/index.js')
+  script#jst-alert(type="text/x-handlebars-template"): include templates/alert
+  script#jst-device(type="text/x-handlebars-template"): include templates/device
+
+
+nav.navbar.navbar-default(role='navigation')
+  .navbar-header
+    button.navbar-toggle(type='button', data-toggle='collapse', data-target='.js-navbar-collapse')
+      span.sr-only Toggle Menu
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    a.navbar-brand
+      | GrandSlam:&nbsp;
+      small: em#js-status discovering...
+
+  //- .collapse.navbar-collapse.js-navbar-collapse
+    ul.nav.navbar-nav
+
+#js-main
+

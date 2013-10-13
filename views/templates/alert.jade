@@ -1,0 +1,23 @@
+.row.js-alert
+  .col-xs-12.col-md-6.col-md-offset-3
+    .alert.alert-info
+      h4 HDHomeRun Found!
+      .row
+        .col-xs-6.text-right
+          strong ID
+        .col-xs-6
+          {{device_id}}
+
+      .row
+        .col-xs-6.text-right
+          strong IP Address
+        .col-xs-6
+          {{device_ip}}
+
+      .row
+        .col-xs-6.text-right
+          strong Tuners
+        .col-xs-6
+          {{tuner_count}}
+      hr
+      a#js-connect(data-id="{{device_id}}").btn.btn-primary.btn-block Connect
