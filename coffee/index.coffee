@@ -83,6 +83,14 @@ require ['jquery', 'handlebars', 'hammer'], ($, hb) ->
       console.log "tuned channel #{channel}"
       updateTunerStatus(0)
 
+  setTarget = (e) ->
+    tuner = "tuner0"
+    ip = '10.0.0.24:5000'
+    $tuner = $.getJSON("set/#{tuner}/target/#{ip}")
+    $tuner.done (data) ->
+      console.log "targeted computer #{ip}"
+      updateTunerStatus(0)
+
   discoverDevices()
   $main.hammer().on 'tap', '#js-connect', createDevice
   $main.hammer().on 'tap', '.js-channel', tuneChannel

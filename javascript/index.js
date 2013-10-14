@@ -22,7 +22,7 @@ require.config({
 });
 
 require(['jquery', 'handlebars', 'hammer'], function($, hb) {
-  var $main, active, ajaxMessage, createDevice, discover, discoverDevices, logMessage, tuneChannel, updateDeviceInfo, updateHwModel, updateStatus, updateTunerStatus;
+  var $main, active, ajaxMessage, createDevice, discover, discoverDevices, logMessage, setTarget, tuneChannel, updateDeviceInfo, updateHwModel, updateStatus, updateTunerStatus;
   active = discover = {};
   $main = $('#js-main');
   updateStatus = function(_str, _class, _obj) {
@@ -89,6 +89,16 @@ require(['jquery', 'handlebars', 'hammer'], function($, hb) {
     $tuner = $.getJSON("set/" + tuner + "/channel/" + channel);
     return $tuner.done(function(data) {
       console.log("tuned channel " + channel);
+      return updateTunerStatus(0);
+    });
+  };
+  setTarget = function(e) {
+    var $tuner, ip, tuner;
+    tuner = "tuner0";
+    ip = '10.0.0.24:5000';
+    $tuner = $.getJSON("set/" + tuner + "/target/" + ip);
+    return $tuner.done(function(data) {
+      console.log("targeted computer " + ip);
       return updateTunerStatus(0);
     });
   };
